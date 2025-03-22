@@ -1,33 +1,426 @@
-table {
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #1a1a1a;
+    color: #e0e0e0;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+header {
+    background: linear-gradient(135deg, #2c2c2c, #4a4a4a);
+    color: #ffffff;
+    text-align: center;
+    padding: 1.5em 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    position: relative;
+    animation: slideIn 1s ease-out;
+}
+
+header h1 {
+    display: inline-block;
+    margin: 0;
+    font-size: clamp(1.5em, 5vw, 2.5em);
+    text-shadow: 2px 2px 5px rgba(255, 85, 85, 0.7);
+    transition: transform 0.3s ease;
+}
+
+header h1:hover {
+    transform: scale(1.05);
+}
+
+.cv-button {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    background: #ff5555;
+    color: #fff;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    font-size: clamp(0.9em, 3vw, 1em);
+    box-shadow: 0 0 10px rgba(255, 85, 85, 0.5);
+}
+
+.cv-button:hover {
+    background: #ff7777;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 0 20px rgba(255, 85, 85, 0.8);
+}
+
+main {
+    padding: clamp(20px, 5vw, 40px);
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+#best-practices-list {
+    margin-bottom: clamp(20px, 5vw, 40px);
+}
+
+.practice-section {
+    border: none;
+    padding: clamp(10px, 3vw, 20px);
+    margin-bottom: clamp(10px, 3vw, 20px);
+    background: #2c2c2c;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.practice-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(255, 85, 85, 0.3);
+}
+
+.practice-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
     width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 85, 85, 0.2), transparent);
+    animation: shine 2s infinite;
 }
 
-th, td {
-    border: 1px solid #ddd;
-    padding: 10px;
-    text-align: left;
+.practice-section h2 {
+    color: #ffffff;
+    border-bottom: 2px solid #ff5555;
+    padding-bottom: 10px;
+    margin-top: 0;
+    font-size: clamp(1.2em, 4vw, 1.5em);
+    transition: color 0.3s ease;
 }
 
-th {
-    background-color: #f4f4f4;
+.practice-section:hover h2 {
+    color: #ff7777;
 }
 
-.dropdown-content {
-    display: none;
-    padding: 10px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    margin-top: 5px;
-}
-
-.dropdown-toggle {
+.section-practice {
+    padding: clamp(8px, 2vw, 15px);
+    margin-bottom: clamp(5px, 2vw, 10px);
+    background: rgba(255, 85, 85, 0.1);
+    border-radius: 8px;
+    transition: all 0.3s ease;
     cursor: pointer;
-    color: #007bff;
-    text-decoration: underline;
 }
 
-.dropdown-toggle:hover {
-    color: #0056b3;
+.section-practice:hover {
+    background: rgba(255, 85, 85, 0.3);
+    transform: scale(1.02);
+}
+
+.section-practice.checked {
+    background: rgba(85, 255, 85, 0.2);
+    box-shadow: 0 0 10px rgba(85, 255, 85, 0.5);
+}
+
+.section-practice label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+    cursor: pointer;
+    position: relative;
+    font-size: clamp(0.9em, 3vw, 1em);
+}
+
+.section-practice input[type="checkbox"] {
+    margin-right: clamp(5px, 2vw, 10px);
+    accent-color: #ff5555;
+    transform: scale(1.2);
+    transition: transform 0.2s ease;
+}
+
+.section-practice input[type="checkbox"]:checked {
+    transform: scale(1.4);
+}
+
+.section-practice label::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333333;
+    color: #e0e0e0;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(255, 85, 85, 0.5);
+}
+
+.section-practice label:hover::after {
+    opacity: 1;
+    visibility: visible;
+    bottom: 120%;
+}
+
+#summary {
+    border: none;
+    padding: clamp(15px, 3vw, 25px);
+    background: #2c2c2c;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+#summary:hover {
+    box-shadow: 0 8px 25px rgba(85, 255, 85, 0.3);
+}
+
+#summary h2 {
+    color: #ffffff;
+    border-bottom: 2px solid #55ff55;
+    padding-bottom: 10px;
+    font-size: clamp(1.2em, 4vw, 1.5em);
+    transition: color 0.3s ease;
+}
+
+#summary:hover h2 {
+    color: #77ff77;
+}
+
+#progress-bar {
+    width: 100%;
+    height: 20px;
+    background: #333333;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: clamp(5px, 2vw, 10px) 0;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+#progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #ff5555, #55ff55);
+    width: 0;
+    transition: width 0.5s ease;
+}
+
+#total-practices-met {
+    font-size: clamp(1em, 3vw, 1.2em);
+    color: #55ff55;
+    font-weight: 600;
+    animation: pulse 1.5s infinite;
+}
+
+#section-summary p {
+    margin: clamp(5px, 2vw, 10px) 0;
+    padding: 8px;
+    background: rgba(85, 255, 85, 0.1);
+    border-radius: 5px;
+    font-size: clamp(0.9em, 3vw, 1em);
+    transition: background 0.3s ease;
+}
+
+#section-summary p:hover {
+    background: rgba(85, 255, 85, 0.3);
+}
+
+#success-message {
+    color: #55ff55;
+    font-weight: 600;
+    font-size: clamp(1em, 3vw, 1.1em);
+    text-shadow: 0 0 5px rgba(85, 255, 85, 0.5);
+}
+
+footer {
+    text-align: center;
+    padding: clamp(1em, 3vw, 1.5em) 0;
+    background: linear-gradient(135deg, #2c2c2c, #4a4a4a);
+    color: #ffffff;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    font-size: clamp(0.8em, 2.5vw, 0.9em);
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+
+footer:hover {
+    transform: translateY(-3px);
+}
+
+.reward-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background: #333333;
+    padding: clamp(10px, 3vw, 20px);
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(255, 85, 85, 0.7);
+    z-index: 1000;
+    max-width: clamp(250px, 80vw, 350px);
+    border: 3px solid #ff5555;
+    animation: popIn 0.5s ease-out forwards, spinBox 4s linear infinite;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.reward-popup img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    filter: brightness(1.1);
+}
+
+.badge-text {
+    margin-top: 10px;
+    background: #55ff55;
+    color: #1a1a1a;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: clamp(0.8em, 2.5vw, 1em);
+    box-shadow: 0 0 10px rgba(85, 255, 85, 0.7);
+}
+
+.party-pop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 999;
+}
+
+.confetti {
+    position: absolute;
+    width: clamp(8px, 2vw, 12px);
+    height: clamp(8px, 2vw, 12px);
+    border-radius: 50%;
+    background: linear-gradient(45deg, #ff5555, #55ff55);
+    animation: fall 2s ease-out forwards;
+}
+
+#fab-reset {
+    position: fixed;
+    bottom: clamp(10px, 3vw, 20px);
+    right: clamp(10px, 3vw, 20px);
+    width: clamp(40px, 10vw, 60px);
+    height: clamp(40px, 10vw, 60px);
+    background: #ff5555;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    font-size: clamp(1em, 4vw, 1.5em);
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(255, 85, 85, 0.5);
+    transition: all 0.3s ease;
+}
+
+#fab-reset:hover {
+    transform: scale(1.1);
+    background: #ff7777;
+    box-shadow: 0 6px 20px rgba(255, 85, 85, 0.7);
+}
+
+/* Animations */
+@keyframes slideIn { 0% { transform: translateY(-100%); opacity: 0; } 100% { transform: translateY(0); opacity: 1; } }
+@keyframes shine { 0% { left: -100%; } 20% { left: 100%; } 100% { left: 100%; } }
+@keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+@keyframes popIn { 0% { transform: translate(-50%, -50%) scale(0); opacity: 0; } 80% { transform: translate(-50%, -50%) scale(1.1); opacity: 1; } 100% { transform: translate(-50%, -50%) scale(1); opacity: 1; } }
+@keyframes fall { 0% { transform: translateY(-100vh) rotate(0deg); opacity: 1; } 100% { transform: translateY(100vh) rotate(720deg); opacity: 0; } }
+@keyframes spinBox { 0% { transform: translate(-50%, -50%) scale(1) rotate(0deg); } 100% { transform: translate(-50%, -50%) scale(1) rotate(360deg); } }
+
+/* Particle Background */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    background: radial-gradient(circle, rgba(255, 85, 85, 0.1) 0%, transparent 70%);
+    animation: particleShift 20s linear infinite;
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAFUlEQVQYV2NkYGD4z8DAwMDAwAAAmwMBsWjGZgAAAABJRU5ErkJggg==') repeat;
+    opacity: 0.05;
+    animation: particleFloat 15s linear infinite reverse;
+}
+
+@keyframes particleShift { 0% { transform: translate(0, 0); } 100% { transform: translate(-50px, -50px); } }
+@keyframes particleFloat { 0% { transform: translate(0, 0); } 100% { transform: translate(30px, 30px); } }
+
+/* Media Queries */
+@media (max-width: 768px) {
+    header {
+        padding: 1em 5px;
+    }
+    .cv-button {
+        position: static;
+        display: block;
+        margin: 10px auto;
+        transform: none;
+    }
+    main {
+        padding: 15px;
+    }
+    .practice-section {
+        padding: 10px;
+        margin-bottom: 15px;
+    }
+    .section-practice {
+        padding: 8px;
+    }
+    #summary {
+        padding: 15px;
+    }
+    .reward-popup {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+    .section-practice label {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .section-practice input[type="checkbox"] {
+        margin-bottom: 5px;
+    }
+    .section-practice label::after {
+        white-space: normal;
+        width: 80vw;
+        left: 0;
+        transform: none;
+    }
+    #fab-reset {
+        bottom: 10px;
+        right: 10px;
+        width: 40px;
+        height: 40px;
+        font-size: 1em;
+    }
 }

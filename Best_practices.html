@@ -1,182 +1,44 @@
-<!-- Best Practices Page -->
-
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Web Development Best Practices</title>
-        <link rel="stylesheet" href="best.css">
-        <script src="best.js"></script>
-    </head>
-
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Dev Best Practices</title>
+    <link rel="stylesheet" href="best.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
         <h1>Web Development Best Practices</h1>
-        <table>
-            <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Description</th>
-                    <th>Checklist</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- HTML Best Practices -->
-                <tr>
-                    <td>1</td>
-                    <td>
-                        <span class="dropdown-toggle" onclick="toggleDropdown('html1')">Use semantic HTML</span>
-                        <div id="html1" class="dropdown-content">
-                            Semantic HTML improves accessibility and SEO by using elements like `<header>`, `<footer>`, and `<article>` appropriately.
-                        </div>
-                    </td>
-                    <td><input type="checkbox"></td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>
-                        <span class="dropdown-toggle" onclick="toggleDropdown('html2')">Provide alt attributes for images</span>
-                        <div id="html2" class="dropdown-content">
-                            Alt attributes improve accessibility for visually impaired users and help search engines understand images.
-                        </div>
-                    </td>
-                    <td><input type="checkbox"></td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>
-                        <span class="dropdown-toggle" onclick="toggleDropdown('html3')">Use proper document structure</span>
-                        <div id="html3" class="dropdown-content">
-                            Ensure the document has a `<head>`, `<body>`, and proper nesting of elements for clarity and maintainability.
-                        </div>
-                    </td>
-                    <td><input type="checkbox"></td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>
-                        <span class="dropdown-toggle" onclick="toggleDropdown('html4')">Minimize inline styles</span>
-                        <div id="html4" class="dropdown-content">
-                            Avoid inline styles to keep HTML clean and maintainable. Use external or internal CSS instead.
-                        </div>
-                    </td>
-                    <td><input type="checkbox"></td>
-                </tr>
-                <tr>
-                    <td>5</td>
-                    <td>
-                        <span class="dropdown-toggle" onclick="toggleDropdown('html5')">Validate HTML</span>
-                        <div id="html5" class="dropdown-content">
-                            Use tools like the W3C Validator to ensure your HTML is free of errors and follows standards.
-                        </div>
-                    </td>
-                    <td><input type="checkbox"></td>
-                </tr>
-    
-                <!-- CSS Best Practices -->
-                <tr>
-                    <td>6</td>
-                    <td>
-                        <span class="dropdown-toggle" onclick="toggleDropdown('css1')">Use external stylesheets</span>
-                        <div id="css1" class="dropdown-content">
-                            External stylesheets keep your CSS separate from HTML, improving maintainability and reusability.
-                        </div>
-                    </td>
-                    <td><input type="checkbox"></td>
-                </tr>
-                <tr>
-                    <td>7</td>
-                    <td>
-                        <span class="dropdown-toggle" onclick="toggleDropdown('css2')">Use a consistent naming convention</span>
-                        <div id="css2" class="dropdown-content">
-                            Consistent naming (e.g., BEM) makes your CSS easier to read and maintain.
-                        </div>
-                    </td>
-                    <td><input type="checkbox"></td>
-                </tr>
-                <tr>
-                    <td>8</td>
-                    <td>
-                        <span class="dropdown-toggle" onclick="toggleDropdown('css3')">Avoid !important</span>
-                        <div id="css3" class="dropdown-content">
-                            Overusing `!important` can make debugging and overriding styles difficult. Use it sparingly.
-                        </div>
-                    </td>
-                    <td><input type="checkbox"></td>
-                </tr>
-                <tr>
-                    <td>9</td>
-                    <td>
-                        <span class="dropdown-toggle" onclick="toggleDropdown('css4')">Optimize CSS for performance</span>
-                        <div id="css4" class="dropdown-content">
-                            Minify CSS files and remove unused styles to improve page load times.
-                        </div>
-                    </td>
-                    <td><input type="checkbox"></td>
-                </tr>
-                <tr>
-                    <td>10</td>
-                    <td>
-                        <span class="dropdown-toggle" onclick="toggleDropdown('css5')">Use responsive design</span>
-                        <div id="css5" class="dropdown-content">
-                            Use media queries and flexible layouts to ensure your site works well on all devices.
-                        </div>
-                    </td>
-                    <td><input type="checkbox"></td>
-                </tr>
-    
-                <!-- JavaScript Best Practices -->
-                <tr>
-                    <td>11</td>
-                    <td>
-                        <span class="dropdown-toggle" onclick="toggleDropdown('js1')">Use strict mode</span>
-                        <div id="js1" class="dropdown-content">
-                            Enable strict mode (`'use strict';`) to catch common coding errors and enforce better practices.
-                        </div>
-                    </td>
-                    <td><input type="checkbox"></td>
-                </tr>
-                <tr>
-                    <td>12</td>
-                    <td>
-                        <span class="dropdown-toggle" onclick="toggleDropdown('js2')">Avoid global variables</span>
-                        <div id="js2" class="dropdown-content">
-                            Minimize the use of global variables to reduce the risk of conflicts and improve code modularity.
-                        </div>
-                    </td>
-                    <td><input type="checkbox"></td>
-                </tr>
-                <tr>
-                    <td>13</td>
-                    <td>
-                        <span class="dropdown-toggle" onclick="toggleDropdown('js3')">Use meaningful variable names</span>
-                        <div id="js3" class="dropdown-content">
-                            Use descriptive and meaningful names for variables and functions to improve code readability.
-                        </div>
-                    </td>
-                    <td><input type="checkbox"></td>
-                </tr>
-                <tr>
-                    <td>14</td>
-                    <td>
-                        <span class="dropdown-toggle" onclick="toggleDropdown('js4')">Avoid blocking the main thread</span>
-                        <div id="js4" class="dropdown-content">
-                            Use asynchronous programming (e.g., Promises, async/await) to prevent blocking the main thread.
-                        </div>
-                    </td>
-                    <td><input type="checkbox"></td>
-                </tr>
-                <tr>
-                    <td>15</td>
-                    <td>
-                        <span class="dropdown-toggle" onclick="toggleDropdown('js5')">Write modular code</span>
-                        <div id="js5" class="dropdown-content">
-                            Break your code into smaller, reusable modules to improve maintainability and scalability.
-                        </div>
-                    </td>
-                    <td><input type="checkbox"></td>
-                </tr>
-            </tbody>
-        </table>
-    </body>
-
+        <a href="cv.html" class="cv-button">My CV</a>
+    </header>
+    <main>
+        <section id="best-practices-list">
+            <div class="practice-section" id="section-1">
+                <h2>Core Principles</h2>
+            </div>
+            <div class="practice-section" id="section-2">
+                <h2>Design and Accessibility</h2>
+            </div>
+            <div class="practice-section" id="section-3">
+                <h2>Performance and Optimization</h2>
+            </div>
+        </section>
+        <section id="summary">
+            <h2>Your Best Practices Summary</h2>
+            <div id="progress-bar">
+                <div id="progress-fill"></div>
+            </div>
+            <p id="total-practices-met">Total Practices Met: 0 / <span id="total-practices"></span></p>
+            <div id="section-summary"></div>
+            <p id="success-message"></p>
+            <div id="animal-reward"></div>
+        </section>
+    </main>
+    <footer>
+        <p>Mallikarjuna Vittalapura Ravi 2025</p>
+    </footer>
+    <button id="fab-reset" title="Reset Checklist">↺</button>
+    <script src="best.js"></script>
+</body>
 </html>
