@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
         audio.volume = 0.3;
         audio.play().catch(() => console.log('Audio blocked by browser'));
         popup.addEventListener('click', () => popup.remove());
-        setTimeout(() => popup.remove(), 5000);
+        setTimeout(() => popup.remove(), 5000); // Matches total duration (popIn + spin/pause cycle)
     }
 
     function triggerPartyPop() {
