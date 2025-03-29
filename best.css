@@ -428,3 +428,15 @@ body::after {
         font-size: 1em;
     }
 }
+
+.validator-link {
+    color: #007bff; /* Blue color, adjust as needed */
+    text-decoration: none; /* Removes underline */
+    font-weight: 600;
+    margin-left: 10px; /* Space from the copyright text */
+}
+
+.validator-link:hover {
+    text-decoration: underline; /* Underline on hover */
+    color: #0056b3; /* Darker blue on hover */
+}
