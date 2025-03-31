@@ -1877,3 +1877,126 @@ body {
   90% { opacity: 1; }
   100% { transform: translateX(100vw) translateY(var(--y-offset)); opacity: 0; }
 }
+
+/* References Section Styling */
+.references {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.references-title {
+  margin-bottom: 15px;
+  color: var(--white-2); /* Matches the white color of other headings */
+  font-size: var(--fs-2);
+  font-weight: var(--fw-500);
+}
+
+.references-container {
+  position: relative;
+}
+
+.references-button {
+  background: var(--border-gradient-onyx); /* Gradient border matching other buttons */
+  color: var(--orange-yellow-crayola); /* Yellow text to match theme */
+  border: none;
+  padding: 10px 20px;
+  font-size: var(--fs-6);
+  font-weight: var(--fw-500);
+  cursor: pointer;
+  border-radius: 14px; /* Rounded corners to match other buttons */
+  box-shadow: var(--shadow-3);
+  transition: var(--transition-1);
+  z-index: 1;
+  position: relative;
+}
+
+.references-button::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  background: var(--bg-gradient-jet); /* Dark background inside the button */
+  border-radius: inherit;
+  z-index: -1;
+  transition: var(--transition-1);
+}
+
+.references-button:hover {
+  background: var(--bg-gradient-yellow-1); /* Yellow gradient on hover */
+}
+
+.references-button:hover::before {
+  background: var(--bg-gradient-yellow-2);
+}
+
+.references-dropdown {
+  display: none; /* Hidden by default */
+  background: var(--eerie-black-2); /* Dark background to match the theme */
+  border: 1px solid var(--jet); /* Border to match other cards */
+  border-radius: 14px;
+  padding: 15px;
+  margin-top: 10px;
+  box-shadow: var(--shadow-2);
+  text-align: left;
+  max-height: 300px; /* Limit height with scroll if needed */
+  overflow-y: auto;
+}
+
+.references-dropdown.active {
+  display: block; /* Show when active */
+}
+
+.reference-item {
+  margin-bottom: 10px;
+}
+
+.reference-item:last-child {
+  margin-bottom: 0;
+}
+
+.reference-item p {
+  font-size: var(--fs-6);
+  line-height: 1.6;
+  color: var(--white-2); /* White text to match the theme */
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .references-title {
+    font-size: var(--fs-3); /* Adjust for tablets */
+  }
+
+  .references-button {
+    font-size: var(--fs-7);
+    padding: 8px 15px;
+  }
+
+  .reference-item p {
+    font-size: var(--fs-7); /* Slightly smaller text */
+  }
+
+  .references-dropdown {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .references-title {
+    font-size: var(--fs-4); /* Smaller title on mobile */
+  }
+
+  .references-button {
+    font-size: var(--fs-8);
+    padding: 6px 12px;
+    width: 100%; /* Full-width button on small screens */
+  }
+
+  .reference-item p {
+    font-size: var(--fs-8); /* Smallest text size for readability */
+  }
+
+  .references-dropdown {
+    margin-top: 5px;
+    max-height: 200px; /* Shorter dropdown on mobile */
+  }
+}

@@ -210,3 +210,15 @@ if (referencesToggle && referencesContent) {
         }
     });
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    const toggleButton = document.getElementById("references-toggle");
+    const dropdown = document.getElementById("references-content");
+  
+    toggleButton.addEventListener("click", function () {
+      dropdown.classList.toggle("active");
+      toggleButton.textContent = dropdown.classList.contains("active")
+        ? "Click to Hide References"
+        : "Click to Show References";
+    });
+  });
