@@ -26,7 +26,7 @@
 
           <p class="title">Salesforce Developer</p>
         </div>
-        <div class="btn-box"></div>
+        <div class="btn-box">
           <button 
             class="btn btn-color2"
             onclick="window.open('./assets/images/Mallikarjuna CV.pdf')">
@@ -69,7 +69,7 @@
             <div class="contact-info">
               <p class="contact-title">Phone</p>
 
-              <a href="tel:+61 415464226" class="contact-link">+61 415464226</a>
+              <a href="tel:+61415464226" class="contact-link">+61 415464226</a>
             </div>
 
           </li>
@@ -331,7 +331,7 @@
               <div class="content-card" data-testimonials-item>
 
                 <figure class="testimonials-image-box">
-                  <img src="./assets/images/AI Assoc.png" alt="Salesforce AI Associate" width="60" data-testimonials-avatar>
+                  <img src="./assets/images/AI_Assoc.png" alt="Salesforce AI Associate" width="60" data-testimonials-avatar>
                 </figure>
 
                 <h4 class="h4 testimonials-item-title" data-testimonials-title>Salesforce AI Associate</h4>
@@ -348,7 +348,7 @@
               <div class="content-card" data-testimonials-item>
 
                 <figure class="testimonials-image-box">
-                  <img src="./assets/images/agentforce spec.png" alt="Salesforce Agentforce Specialist" width="60" data-testimonials-avatar>
+                  <img src="./assets/images/agentforce_spec.png" alt="Salesforce Agentforce Specialist" width="60" data-testimonials-avatar>
                 </figure>
 
                 <h4 class="h4 testimonials-item-title" data-testimonials-title>Salesforce Agentforce Specialist</h4>
@@ -691,13 +691,10 @@
           <div class="filter-select-box">
 
             <button class="filter-select" data-select>
-
-              <div class="select-value" data-selecct-value>Select category</div>
-
-              <div class="select-icon">
+              <span class="select-value" data-select-value>Select category</span>
+              <span class="select-icon">
                 <ion-icon name="chevron-down"></ion-icon>
-              </div>
-
+              </span>
             </button>
 
             <ul class="select-list">
@@ -913,22 +910,19 @@
 
         <section class="contact-form">
           <h3 class="h3 form-title">Contact Me</h3>
-      
-            <div class="form"></div>
-              <form id="my-form" action="https://formspree.io/f/mqapapdy" method="POST">
-                <div class="input-wrapper">
-                  <input type="text" id="fullname" name="fullname" class="form-input" placeholder="Full name" required>
-                  <input type="email" id="email" name="email" class="form-input" placeholder="Email address" required>
-                </div>
-                <textarea id="message" name="message" class="form-input" placeholder="Your Message" required></textarea>
-                <p id="my-form-status"></p>
-                <button type="submit" class="form-btn">
-                  <img src="./assets/images/send.jpeg" alt="Send Icon" width="24">
-                  <span>Send Message</span>
-                </button>
-              </form>
+          <form id="my-form" action="https://formspree.io/f/mqapapdy" method="POST">
+            <div class="input-wrapper">
+              <input type="text" id="fullname" name="fullname" class="form-input" placeholder="Full name" required>
+              <input type="email" id="email" name="email" class="form-input" placeholder="Email address" required>
             </div>
-      </section>
+            <textarea id="message" name="message" class="form-input" placeholder="Your Message" required></textarea>
+            <p id="my-form-status"></p>
+            <button type="submit" class="form-btn">
+              <img src="./assets/images/send.jpeg" alt="Send Icon" width="24">
+              <span>Send Message</span>
+            </button>
+          </form>
+        </section>
 
       </article>
 
