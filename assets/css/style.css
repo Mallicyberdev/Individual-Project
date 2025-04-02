@@ -1239,6 +1239,7 @@ footer a img { display: block; margin: 0 auto; }
   }
   .testimonials-text {
     -webkit-line-clamp: 2;
+    line-clamp: 2;
   }
 
   .modal-container { padding: 20px; }
