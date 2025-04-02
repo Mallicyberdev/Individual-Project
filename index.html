@@ -1,19 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Meta Information -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Dev Best Practices</title>
+
+    <!-- Favicon -->
     <link rel="tab icon" href="./assets/images/malli-profile.ico">
+
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="best.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Header Section -->
     <header>
         <h1>Web Development Best Practices</h1>
         <a href="about.html" class="cv-button">About Me</a>
     </header>
+
+    <!-- Main Content -->
     <main>
+        <!-- Best Practices List Section -->
         <section id="best-practices-list">
             <div class="practice-section" id="section-1">
                 <h2>Core Principles</h2>
@@ -25,24 +34,42 @@
                 <h2>Performance and Optimization</h2>
             </div>
         </section>
+
+        <!-- Summary Section -->
         <section id="summary">
             <h2>Your Best Practices Summary</h2>
+
+            <!-- Progress Bar -->
             <div id="progress-bar">
                 <div id="progress-fill"></div>
             </div>
+
+            <!-- Total Practices Met -->
             <p id="total-practices-met">Total Practices Met: 0 / <span id="total-practices"></span></p>
+
+            <!-- Section Summary -->
             <div id="section-summary"></div>
+
+            <!-- Success Message -->
             <p id="success-message"></p>
+
+            <!-- Animal Reward -->
             <div id="animal-reward"></div>
         </section>
     </main>
+
+    <!-- Footer Section -->
     <footer>
         <p>Mallikarjuna Vittalapura Ravi 2025</p>
         <a href="https://validator.w3.org/check?uri=https%3A%2F%2Fmallicyberdev.github.io%2FIndividual-Project%2F" target="_blank" class="validator-link">
             <img src="./assets/images/w3c_validator.png" alt="W3C HTML Validation" style="width:88px; height:31px;">
         </a>
     </footer>
+
+    <!-- Reset Button -->
     <button id="fab-reset" title="Reset Checklist">↺</button>
+
+    <!-- JavaScript -->
     <script src="best.js"></script>
 </body>
 </html>
